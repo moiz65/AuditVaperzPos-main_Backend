@@ -33,12 +33,21 @@ const db = mysql.createPool({
 });
 
 // Checking connection to MySQL
-db.connect((err) => {
+// db.connect((err) => {
+//   if (err) {
+//     console.error("Error connecting to MySQL:", err.message);
+//     return;
+//   }
+//   console.log("Connected to MySQL");
+// });
+
+// ✅ Simple test query to verify the pool works
+db.query("SELECT 1", (err) => {
   if (err) {
-    console.error("Error connecting to MySQL:", err.message);
-    return;
+    console.error("❌ Database connection failed:", err.message);
+  } else {
+    console.log("✅ Connected to MySQL (via pool)");
   }
-  console.log("Connected to MySQL");
 });
 
 // API endpoint to check database connection
