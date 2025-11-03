@@ -10,7 +10,7 @@ require("dotenv").config({ path: "./backend/.env" });
 
 // Allow requests from your frontend
 const corsOptions = {
-  origin: "https://audit-vaperz-pos-frontend.vercel.app", // Change to your frontend URL (e.g., your domain
+  origin: "https://audit-vaperz-pos.vercel.app", // Change to your frontend URL (e.g., your domain
 };
 
 app.use(cors(corsOptions));
